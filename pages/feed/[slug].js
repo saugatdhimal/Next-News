@@ -19,7 +19,7 @@ export const Feed = ({ pageNumber, articles }) => {
       <div className={styles.paginator}>
           <div onClick={() => {
               if (pageNumber > 1) {
-                  router.push(`/feed/${pageNumber-1}`)
+                  router.push(`/feed/${pageNumber-1}`).then(() => window.scrollTo(0,0));
               }
           }} className={pageNumber === 1 ? styles.disabled : styles.active}>
               Previous Page
